@@ -1,0 +1,26 @@
+{
+  "initialData": {
+    "domain": "google.com",
+    "scheme": "https",
+    "path": "/"
+  },
+  "pageLoadTime": 0.4,
+  "firstInteractionTime": 0.9,
+  "pageLoadScore": 720,
+  "firstInteractionScore": 720,
+  "responses": [
+    {
+      "statusCode": 302,
+      "headers": {
+        "location": "https://www.google.com"
+      }
+    },
+    {
+      "statusCode": 200,
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "1234"
+      }
+    }
+  ]
+}

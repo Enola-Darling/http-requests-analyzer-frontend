@@ -1,20 +1,25 @@
-export default function Request({request}) {
-
-    return     return (
-        <div>
-            <h4 className="box-title">URL Info:</h4>
-            <div className="box-card box-card__domain">
-                <p className="box-card__title">Domain</p>
-                <p id="box-card__content">{data?.initialData.domain}</p>
-            </div>
-            <div className="box-card box-card__scheme">
-                <p className="box-card__title">Scheme</p>
-                <p id="box-card__content">{data?.initialData.scheme}</p>
-            </div>
-            <div className="box-card box-card__path">
-                <p className="box-card__title">Path</p>
-                <p id="box-card__content">{data?.initialData.path}</p>
-            </div>
+function Header({headerKey, headerValue}) {
+    return (
+        <div className="box-card box-card__header">
+            <p>
+                <strong className="box-card__title">{headerKey}: </strong>
+                <span id="box-card__content">{headerValue}</span>
+            </p>
         </div>
+    )
+}
+
+export default function Response({response, index}) {
+    return (
+        <section className="response-info info-sections">
+            <h4 className="box-title">Response</h4>
+            <div className="box-card box-card__status">
+                <strong className="box-card__title">Status Code: </strong>
+                <span id="box-card__content">{response?.statusCode}</span>
+            </div>
+            {Object.keys(response?.headers).map((key, index2) => (
+                <Header key={`${index}-${index2}`} headerKey={key} headerValue={response.headers[key]}></Header>
+            ))}
+        </section>
     )
 }

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding-bottom: 60px;
 }
 
 .App-logo {
@@ -22,6 +23,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 100px 0;
+  .error-message {
+    color: red;
+  }
 }
 
 .App-link {
@@ -34,5 +38,59 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  .url-info {
+    .box-card {
+      strong {
+        display: block;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .box-title {
+    text-transform: uppercase;
+  }
+
+  .box-card__header {
+    .box-card__title {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.timing {
+  text-align: center;
+
+  .timing__title {
+    font-size: 1.2rem;
+  }
+
+  .timing__time {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.Muibox-root, .css-151dxxb {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    text-align: left;
   }
 }
