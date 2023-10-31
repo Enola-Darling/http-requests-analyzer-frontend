@@ -1,0 +1,44 @@
+.form-wrap {
+    background-color: #EBEBEB; 
+    display: flex;
+    border-radius: 15px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  
+    @media (max-width: 767px) {
+      flex-direction: row;
+      align-items: flex-start;
+      
+    }
+  
+    form {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+  
+      @media (max-width: 767px) {
+        flex-direction: row;
+      }
+     label {
+        color:#323232;
+      }
+    }
+    .menu-itme{
+        color:#323232;
+     }
+  
+    .submit-button {
+      display: flex;
+      align-items: center;
+     
+  
+      // @media (max-width: 767px) {
+      //   margin-top: 16px;
+      //   width: 48px;
+      //   height: 48px;
+        
+      // }
+    }
+  }

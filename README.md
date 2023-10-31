@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Note sull'esecuzione
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## JSON Mocks
 
-## Available Scripts
+Il servizio di JSON hosting fornito nelle specifiche sembra non essere piu' disponibile.
 
-In the project directory, you can run:
+La scelta effettuata e' stata utilizzare postman-echo.com.
 
-### `npm start`
+Tale servizio, tra le altre cose, puo' ricevere una richiesta POST con dei dati che vengono inseriti nell'oggetto JSON di risposta alla chiave `data`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Pertanto, troverete il mock definito nella funzione handleSubmit e inviato in una richiesta POST a `postman-echo.com/post` per essere consumato emulando una vera richiesta ad un back-end.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### CORS
 
-### `npm test`
+Tuttavia, `postman-echo.com` forza delle regole per la gestione delle sorgenti della richiesta e l'applicazione potrebbe fallire ad effettuare le fetch a causa di questo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pertanto si consiglia di installare e abilitare una estensione nel proprio per disattivare questi controlli:
 
-### `npm run build`
+- Firefox: https://addons.mozilla.org/it/firefox/addon/access-control-allow-origin/
+- Chrome: https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?pli=1
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Impostare l'estensione come nello screenshot di seguito
+2. abilitarla nella pagina localhost:3000
+3. aggiornare la pagina
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![cors](cors.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Access Allow Control Headers: `Abilitato`
+- Access Control Allow Origin: `*`
 
-### `npm run eject`
+In uno scenario reale che utilizza un vero backend ed esegue il deployment dell'applicazione in maniera opportuna, questo problema non verrebbe percepito. Pertanto quanto in questo paragrafo e' da considerare ai fini dello sviluppo dell'esempio specifico, che non include un back-end. Infatti, nessuna delle scelte di programmazione ha impatto su questa operazione, se non l'utilizzo di quel server che non disabilita questi controlli, così come altri già provati.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Run
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Per eseguire l'applicazione:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm install
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Versioning
 
-## Learn More
+Poiche' si richiede la non pubblicazione di questo progetto, la consegna non e' effettuata via GIT, ma attraverso un file archivio allegato per mail.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Le directory .git e node_modules sono escluse. Si tenga conto delle operazioni necessarie per l'esecuzione. Il codice e la sua esecuzione e' stata testata su Windows 11.

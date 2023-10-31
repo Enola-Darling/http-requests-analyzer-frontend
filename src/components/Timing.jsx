@@ -52,8 +52,7 @@ function Gauge({value}) {
     };
     let phi = 3 * (value - 500) * Math.PI / 2000;
     let markerLocation = [0.95*Math.sin(phi), -0.95*Math.cos(phi)];
-    console.log(markerLocation)
-    //let markerLocation = [0, -1];
+    
     return (
         <div className="gauge">
             <svg viewBox={[-1 - padding, -1 - padding, 2 + 2 * padding, 2].join(" ")}>
@@ -69,7 +68,7 @@ function Gauge({value}) {
                     fill="white"
                     stroke={getBlobColor(value)}
                 />
-                <text x="0" y="0" textAnchor="middle" alignmentBaseline="middle" fontSize="0.2" fill="#fff">
+                <text x="0" y="0" textAnchor="middle" alignmentBaseline="middle" fontSize="0.2" fill="#000" fontWeight={500} letterSpacing={0}>
                     <tspan x="0" dy="-0.5em">{value}</tspan>
                     <tspan x="0" dy="1em">{getMessageForValue(value)}</tspan>
                 </text>

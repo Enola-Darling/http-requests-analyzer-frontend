@@ -10,8 +10,13 @@ import {createTheme, ThemeProvider} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 
 const darkTheme = createTheme({
-    palette: {
+    /*palette: {
         mode: 'dark',
+    },*/
+    palette: {
+        background: {
+            default: "#f2f2f2"
+        }
     },
     spacing: 8,
 });
@@ -27,12 +32,12 @@ function App() {
                         lastResponse={data?.responses?.length > 0 ? data.responses[data.responses.length - 1] : null}></Status>
                     <Form updateData={setData}></Form>
                 </header>
-                <main className="boxes">
-                    {data && <URLInfo data={data}></URLInfo>}
-                    {data?.responses.map((response, index) => (
-                        <Response key={index} response={response} index={index}></Response>
+                {data && <main className="boxes">
+                    <URLInfo data={data}></URLInfo>
+                    {data.responses.map((response, index) => (
+                        <Response key={`response-${index}`} response={response} index={index}></Response>
                     ))}
-                </main>
+                </main>}
                 {data && <SwipeableEdgeDrawer>
                     <Timing time={data?.pageLoadTime} score={data?.pageLoadScore} title="Page Load"></Timing>
                     <Timing time={data?.firstInteractionTime} score={data?.firstInteractionScore}

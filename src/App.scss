@@ -1,43 +1,19 @@
 .App {
   text-align: center;
-  padding-bottom: 60px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  
 }
 
 .App-header {
-  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 100px 0;
+  font-size: calc(20px + 2vmin);
+  font-weight: 400;
+  color:#323232;
+  padding: 50px ;
   .error-message {
     color: red;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -47,42 +23,77 @@ main {
   justify-content: center;
   align-content: center;
   text-align: center;
+  padding-bottom: 30px;
+  gap: 10px;
+
   .url-info {
+    width: 280px;
+    height: 500px;
+    text-align: justify;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     .box-card {
+      background-color: #e9e9e9;
+      padding-left: 10px;
+      span{
+        font-weight: 300;
+        padding-bottom: 50px;
+      }
       strong {
-        display: block;
+        display: flex;
         text-transform: uppercase;
       }
     }
   }
-
+  
   .box-title {
     text-transform: uppercase;
+    font-weight: 300;
+    padding-left: 10px;
   }
-
-  .box-card__header {
+  
+  .box-card {
     .box-card__title {
+      padding-left: 10px;
       text-transform: capitalize;
     }
   }
 }
 
+.response-info{
+  width: 280px;
+  height: 500px;
+  text-align: justify;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  
+  .box-card__status{
+    background-color: #f6f6f6;
+    font-weight: 300;
+    padding: 10px;
+  }
+    p {
+      background-color: #f6f6f6;
+      font-weight: 300;
+      padding: 10px;
+    }
+}
 .timing {
   text-align: center;
 
   .timing__title {
-    font-size: 1.2rem;
+    font-size: 2.0rem;
+    color: #c5c5c5;
   }
 
   .timing__time {
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: bold;
+    color: #5a5a5a;
   }
-}
-
-.Muibox-root, .css-151dxxb {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 @media screen and (min-width: 768px) {
